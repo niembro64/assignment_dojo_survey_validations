@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@model User
 
 <div class="text-center">
     <h1 class="display-4">Niemo</h1>
@@ -8,15 +9,18 @@
     <form action="postForm" method="post">
         <div class="form-group">
             <label for="Name">Name</label>
-            <input type="text" class="form-control" name="Name">
+            <input class="form-control" asp-for="Name">
+            <span class='text-danger' asp-validation-for="Name"></span>
         </div>
         <div class="form-group">
             <label for="Name">Color</label>
-            <input type="text" class="form-control" name="Color">
+            <input class="form-control" asp-for="Color">
+            <span class='text-danger' asp-validation-for="Color"></span>
         </div>
         <div class="form-group">
             <label for="Name">Number</label>
-            <input type="number" class="form-control" name="Number">
+            <input class="form-control"asp-for="Number">
+            <span class='text-danger' asp-validation-for="Number"></span>
         </div>
         <div class="form-group">
             <input type="submit" class="btn btn-primary" value="Submit">
