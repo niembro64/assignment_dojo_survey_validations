@@ -32,8 +32,14 @@ namespace assignment_dojo_survey_validations.Controllers
     [HttpPost("postForm")]
     public IActionResult postForm(User newUser)
     {
-      Console.WriteLine(newUser.Name);
-      return View("Results", newUser);
+
+      if (ModelState.IsValid)
+      {
+
+        Console.WriteLine(newUser.Name);
+        return View("Results", newUser);
+      }
+      return View("Index");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
